@@ -36,7 +36,8 @@ sls deploy
 * **Respuesta exitosa:**
 
   * **Codigo:** 200 <br />
-    **Contenido:** ```json
+    **Contenido:**
+    ```json
     [
         {
             "diametro": "7200",
@@ -57,7 +58,7 @@ sls deploy
             "terreno": "tundra, ice caves, mountain ranges"
         }
     ]
-    `
+    ```
  
 * **Respuesta fallida:**
 
@@ -83,7 +84,8 @@ sls deploy
 * **Respuesta exitosa:**
 
   * **Codigo:** 200 <br />
-    **Contenido:** ```json
+    **Contenido:** 
+    ```json
     {
         "diametro": "7200",
         "nombre": "Hoth",
