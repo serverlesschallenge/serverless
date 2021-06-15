@@ -32,41 +32,31 @@ sls deploy
 * **Metodo:**
 
   `GET`
-  
-* **Parametros URL**
-
-  Ninguno
-
-* **Parametros Data**
-
-  Ninguno
 
 * **Respuesta exitosa:**
 
   * **Codigo:** 200 <br />
-    **Contenido:** `
-    {
-        [
-            {
-                "diametro": "7200",
-                "nombre": "Hoth",
-                "clima": "frozen",
-                "residentes": [],
-                "url": "https://tce76kt1tg.execute-api.us-east-1.amazonaws.com/dev/swapi/planets/d8d3dee0-cdc4-11eb-980b-d9db3bf9af20",
-                "poblacion": "unknown",
-                "peliculas": [
-                    "https://swapi.py4e.com/api/films/2/"
-                ],
-                "agua_superficie": "100",
-                "editado": "2021-06-15T10:31:29.997Z",
-                "periodo_rotacion": "23",
-                "gravedad": "1.1 standard",
-                "creado": "2021-06-15T10:31:29.997Z",
-                "id": "d8d3dee0-cdc4-11eb-980b-d9db3bf9af20",
-                "terreno": "tundra, ice caves, mountain ranges"
-            }
-        ]
-    }
+    **Contenido:** ```json
+    [
+        {
+            "diametro": "7200",
+            "nombre": "Hoth",
+            "clima": "frozen",
+            "residentes": [],
+            "url": "https://tce76kt1tg.execute-api.us-east-1.amazonaws.com/dev/swapi/planets/d8d3dee0-cdc4-11eb-980b-d9db3bf9af20",
+            "poblacion": "unknown",
+            "peliculas": [
+                "https://swapi.py4e.com/api/films/2/"
+            ],
+            "agua_superficie": "100",
+            "editado": "2021-06-15T10:31:29.997Z",
+            "periodo_rotacion": "23",
+            "gravedad": "1.1 standard",
+            "creado": "2021-06-15T10:31:29.997Z",
+            "id": "d8d3dee0-cdc4-11eb-980b-d9db3bf9af20",
+            "terreno": "tundra, ice caves, mountain ranges"
+        }
+    ]
     `
  
 * **Respuesta fallida:**
@@ -76,5 +66,51 @@ sls deploy
 * **Ejemplo de uso:**
 
   ```bash
-    CURL -X https://dominio/dev/swapi/planets
+    CURL -X GET https://dominio/dev/swapi/planets
+  ```
+**Obtener Planeta**
+----
+  Retorna un planeta con sus atributos traducidos al espanol.
+
+* **URL**
+
+  /swapi/planets/:id
+
+* **Metodo:**
+
+  `GET`
+
+* **Respuesta exitosa:**
+
+  * **Codigo:** 200 <br />
+    **Contenido:** ```json
+    {
+        "diametro": "7200",
+        "nombre": "Hoth",
+        "clima": "frozen",
+        "residentes": [],
+        "url": "https://tce76kt1tg.execute-api.us-east-1.amazonaws.com/dev/swapi/planets/d8d3dee0-cdc4-11eb-980b-d9db3bf9af20",
+        "poblacion": "unknown",
+        "peliculas": [
+            "https://swapi.py4e.com/api/films/2/"
+        ],
+        "agua_superficie": "100",
+        "editado": "2021-06-15T10:31:29.997Z",
+        "periodo_rotacion": "23",
+        "gravedad": "1.1 standard",
+        "creado": "2021-06-15T10:31:29.997Z",
+        "id": "d8d3dee0-cdc4-11eb-980b-d9db3bf9af20",
+        "terreno": "tundra, ice caves, mountain ranges"
+    }
+    ```
+ 
+* **Respuesta fallida:**
+
+  * **Codigo:** 404 NOT FOUND <br />
+    **Contenido:** `{ message : "No existe planeta con ese id!" }`
+
+* **Ejemplo de uso:**
+
+  ```bash
+    CURL -X GET https://dominio/dev/swapi/planets/1
   ```
