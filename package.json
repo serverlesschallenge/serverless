@@ -1,0 +1,8 @@
+{
+    "name": "serverless-swapi",
+    "dependencies": {
+        "aws-sdk": "^2.926.0",
+        "axios": "^0.21.1",
+        "uuid": "^8.3.2"
+    }
+}
